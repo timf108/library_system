@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>LibraryConfig.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">org-accessing-data-jpa</a> &gt; <a href="index.source.html" class="el_package">org.repository.domain.library</a> &gt; <span class="el_source">LibraryConfig.java</span></div><h1>LibraryConfig.java</h1><pre class="source lang-java linenums">package org.repository.domain.library;
+
+import java.io.Serializable;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.IdClass;
+import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
+
+/**
+ * LibraryConfig domain class
+ *
+ */
+@Entity
+@Table(name = &quot;LibraryConfig&quot;,uniqueConstraints={@UniqueConstraint(columnNames = {&quot;category&quot;,&quot;name&quot;,&quot;accessLevel&quot;})}) 
+public class LibraryConfig implements Serializable {
+<span class="pc" id="L20">	@Id</span>
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
+<span class="pc" id="L22">    private Long id = 0L;</span>
+	
+	String category;
+    String name;
+    String accessLevel;
+    
+    ValueType valueType;
+	String value;
+    Integer intValue;
+    Double  doubleValue;
+    Boolean booleanValue;
+    
+    /**
+	 * Default Constructor
+	 *
+	 */
+<span class="fc" id="L38">    public LibraryConfig(){</span>
+    	
+<span class="fc" id="L40">    }</span>
+    
+	/**
+	 * 
+	 * LibraryConfig Constructor
+	 * 
+	 * @param category
+	 * @param name
+	 * @param accessLevel
+	 * @param valueType
+	 * @param value
+	 * @param intValue
+	 * @param doubleValue
+	 * @param booleanValue
+	 */
+	public LibraryConfig(String category, String name, String accessLevel, ValueType valueType, String value,
+			Integer intValue, Double doubleValue, Boolean booleanValue) {
+<span class="fc" id="L57">		super();</span>
+<span class="fc" id="L58">		this.category = category;</span>
+<span class="fc" id="L59">		this.name = name;</span>
+<span class="fc" id="L60">		this.accessLevel = accessLevel;</span>
+<span class="fc" id="L61">		this.valueType = valueType;</span>
+<span class="fc" id="L62">		this.value = value;</span>
+<span class="fc" id="L63">		this.intValue = intValue;</span>
+<span class="fc" id="L64">		this.doubleValue = doubleValue;</span>
+<span class="fc" id="L65">		this.booleanValue = booleanValue;</span>
+<span class="fc" id="L66">	}</span>
+	
+	
+	/**
+	 * 
+	 * LibraryConfig Constructor
+	 * 
+	 * @param category
+	 * @param name
+	 * @param accessLevel
+	 * @param valueType
+	 * @param value
+	 * @param intValue
+	 * @param doubleValue
+	 * @param booleanValue
+	 */
+	public LibraryConfig(Long id,String category, String name, String accessLevel, ValueType valueType, String value,
+			Integer intValue, Double doubleValue, Boolean booleanValue) {
+<span class="nc" id="L84">		super();</span>
+<span class="nc" id="L85">		this.id = id;</span>
+<span class="nc" id="L86">		this.category = category;</span>
+<span class="nc" id="L87">		this.name = name;</span>
+<span class="nc" id="L88">		this.accessLevel = accessLevel;</span>
+<span class="nc" id="L89">		this.valueType = valueType;</span>
+<span class="nc" id="L90">		this.value = value;</span>
+<span class="nc" id="L91">		this.intValue = intValue;</span>
+<span class="nc" id="L92">		this.doubleValue = doubleValue;</span>
+<span class="nc" id="L93">		this.booleanValue = booleanValue;</span>
+<span class="nc" id="L94">	}</span>
+	
+	
+	public String getCategory() {
+<span class="nc" id="L98">		return category;</span>
+	}
+	public void setCategory(String category) {
+<span class="nc" id="L101">		this.category = category;</span>
+<span class="nc" id="L102">	}</span>
+	public String getName() {
+<span class="nc" id="L104">		return name;</span>
+	}
+	public void setName(String name) {
+<span class="nc" id="L107">		this.name = name;</span>
+<span class="nc" id="L108">	}</span>
+	public String getAccessLevel() {
+<span class="nc" id="L110">		return accessLevel;</span>
+	}
+	public void setAccessLevel(String accessLevel) {
+<span class="nc" id="L113">		this.accessLevel = accessLevel;</span>
+<span class="nc" id="L114">	}</span>
+	public ValueType getValueType() {
+<span class="nc" id="L116">		return valueType;</span>
+	}
+
+	public void setValueType(ValueType valueType) {
+<span class="nc" id="L120">		this.valueType = valueType;</span>
+<span class="nc" id="L121">	}</span>
+	public String getValue() {
+<span class="nc" id="L123">		return value;</span>
+	}
+	public void setValue(String value) {
+<span class="nc" id="L126">		this.value = value;</span>
+<span class="nc" id="L127">	}</span>
+	public Integer getIntValue() {
+<span class="nc" id="L129">		return intValue;</span>
+	}
+	public void setIntValue(Integer intValue) {
+<span class="nc" id="L132">		this.intValue = intValue;</span>
+<span class="nc" id="L133">	}</span>
+	public Double getDoubleValue() {
+<span class="nc" id="L135">		return doubleValue;</span>
+	}
+	public void setDoubleValue(Double doubleValue) {
+<span class="nc" id="L138">		this.doubleValue = doubleValue;</span>
+<span class="nc" id="L139">	}</span>
+	public Boolean getBooleanValue() {
+<span class="nc" id="L141">		return booleanValue;</span>
+	}
+	public void setBooleanValue(Boolean booleanValue) {
+<span class="nc" id="L144">		this.booleanValue = booleanValue;</span>
+<span class="nc" id="L145">	}</span>
+
+	@Override
+	public String toString() {
+<span class="nc" id="L149">		return &quot;LibraryConfig [id=&quot; + id + &quot;, category=&quot; + category + &quot;, name=&quot; + name + &quot;, accessLevel=&quot; + accessLevel</span>
+				+ &quot;, valueType=&quot; + valueType + &quot;, value=&quot; + value + &quot;, intValue=&quot; + intValue + &quot;, doubleValue=&quot;
+				+ doubleValue + &quot;, booleanValue=&quot; + booleanValue + &quot;]&quot;;
+	}  
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.7.201606060606</span></div></body></html>

@@ -1,0 +1,3 @@
+org/repository/configuration/JpaMySqlConfig.class
+org/repository/library/LibraryConfigRepositoryTest.class
+org/repository/configuration/JpaH2Config.class
